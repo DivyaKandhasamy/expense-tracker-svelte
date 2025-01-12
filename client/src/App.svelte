@@ -22,7 +22,7 @@
 
   onMount(async () => {
     loading = true;
-    const { data } = await axios.get("/api/transactions");
+    const { data } = await axios.get("https://expense-tracker-svelte.vercel.app/api/transactions/");
     $transactions = data;
     loading = false;
   });
@@ -42,14 +42,14 @@
       date: new Date().getTime(),
       value: typeOfTransaction === "+" ? input : input * -1
     };
-    const response = await axios.post("/api/transactions", transaction);
+    const response = await axios.post("https://expense-tracker-svelte.vercel.app/api/transactions/", transaction);
     $transactions = [response.data, ...$transactions];
     loading = false;
     input = '';
   }
   async function removeTransaction(id) {
     loading = true;
-    const response = await axios.delete("/api/transactions/" + id);
+    const response = await axios.delete("https://expense-tracker-svelte.vercel.app/api/transactions/" + id);
     if (response.data.id === id) {
       $transactions = $transactions.filter(t => t._id !== id);
     }
