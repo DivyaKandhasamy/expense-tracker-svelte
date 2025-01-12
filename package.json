@@ -1,0 +1,33 @@
+{
+    "name": "expenses-tracker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "build": "npm install --prefix client && npm run build --prefix client",
+        "client": "npm run dev --prefix client",
+        "server": "nodemon server.js --ignore 'client/'",
+        "dev": "concurrently \"npm run server\" \"npm run client\" ",
+        "build:tailwind": "npx tailwindcss -i ./tailwind.css -o ./client/src/app.css --minify"
+
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "concurrently": "^5.2.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mongoose": "^5.9.15",
+        "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.20",
+        "nodemon": "^2.0.4",
+        "postcss": "^8.4.49",
+        "postcss-loader": "^8.1.1",
+        "tailwindcss": "^3.4.17"
+    }
+}
