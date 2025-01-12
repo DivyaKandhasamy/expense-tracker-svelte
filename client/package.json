@@ -17,10 +17,9 @@
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack-dev-server --content-base public",
     "build:tailwind": "npx tailwindcss -o src/app.css --minify"
-
-
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "expenses-tracker": "file:.."
   }
 }
