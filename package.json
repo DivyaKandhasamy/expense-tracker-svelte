@@ -10,7 +10,6 @@
         "server": "nodemon server.js --ignore 'client/'",
         "dev": "concurrently \"npm run server\" \"npm run client\" ",
         "build:tailwind": "npx tailwindcss -i ./tailwind.css -o ./client/src/app.css --minify"
-
     },
     "keywords": [],
     "author": "",
@@ -20,8 +19,10 @@
         "concurrently": "^5.2.0",
         "cors": "^2.8.5",
         "express": "^4.17.1",
+        "g": "^2.0.1",
         "mongoose": "^5.9.15",
-        "morgan": "^1.10.0"
+        "morgan": "^1.10.0",
+        "vercel": "^39.2.6"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.20",
